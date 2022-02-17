@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} login {% endblock title %}
+{% block h %}  This is a notes storing website  {% endblock h %}
+
+{% block style %}
+<style>
+    h1{
+        background-color: black;
+        color: whitesmoke;
+        margin: 0;
+    }
+    .form-floating,
+    .btn,
+    .mb-3 {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+</style>
+{% endblock style %}
+
+{% block base %}
+<form action="/" method='POST'>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">E-mail or phone number</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1"
+            placeholder="Enter your email or phone number" name="identity">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">password</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1"
+            placeholder="Enter your passord within 10 characters" name="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+
+{% endblock base %}
