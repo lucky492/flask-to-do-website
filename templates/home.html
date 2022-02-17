@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Notes {% endblock title %}
+{% block h %} This is a notes storing website {% endblock h %}
+
+<!-- for style -->
+{% block style %}
+<style>
+    .img1{
+        border: 2px solid red;
+        background-image: image('image1.jpg');
+    }
+</style>
+{% endblock style %}
+
+<!-- for body -->
+{% block base %}
+<div class="img1">
+    <!-- <img src="{{ url_for('static', filename='image1.jpg') }}" alt=""> -->
+</div>
+
+{% endblock base %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Notes {% endblock title %}
+{% block h %} This is a notes storing website {% endblock h %}
+{% block style %}
+<style>
+    .col-md-6 {
+        background-color: rgba(226, 220, 220, 0.733);
+        margin: 1px;
+        display: inline-block;
+        border: 2px solid black;
+        font-style: italic;
+    }
+
+</style>
+{% endblock style %}
+
+{% block base %}
+
+{% for datas in data %}
+    <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success">{{loop.index}}.{{datas.name}} {{datas.sno}}</strong>
+                <h3 class="mb-0"><u>{{datas.title}}</u></h3>
+                <div class="mb-1 text-muted">{{datas.date_created}}</div>
+                <p class="mb-auto">{{datas.content}}</p>
+                <a href="#" class="stretched-link btn btn-primary">Continue reading</a>
+            </div>
+        </div>
+    </div>
+    <a href="/update/{{datas.sno}}"  type="submit" class="btn btn-outline-success">update</a>
+    <a href="/delete/{{datas.sno}}"  type="submit" class="btn btn-outline-danger">delete</a>
+{% endfor %}
+
+{% endblock base %}

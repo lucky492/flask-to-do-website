@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block h %} This is a notes storing website {% endblock h %}
+{% block style %}
+<style>
+    body {
+        color: whitesmoke;
+        font-family: cursive;
+        font-style: oblique;
+        font-weight: bolder;
+        background-color: rgba(7, 6, 6, 0.842);
+    }
+
+    .form-floating,
+    .btn,
+    .mb-3 {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    #floatingTextarea {
+        resize: none;
+        height: 50vh;
+        border: 5px solid black;
+    }
+
+    .form-control {
+        border: 5px solid black;
+    }
+
+    h1 {
+        background-color: black;
+        font-size: 50px;
+        color: whitesmoke;
+        margin: 0;
+        padding: 0;
+        font-family: cursive;
+    }
+</style>
+{% endblock style %}
+
+{% block base %}
+
+<form action="/addnotes" method='POST'>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" name="Name"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your note title name"
+            name="Title">
+    </div>
+
+    <div class="form-floating">
+        Content
+        <textarea class="form-control" name="Content" placeholder="Enter your note" id="floatingTextarea"></textarea>
+        <label for="floatingTextarea"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock base %}
